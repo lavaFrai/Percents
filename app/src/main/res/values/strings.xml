@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Percentages</string>
+    <string name="deposit">Deposit</string>
+    <string name="percents">Percents</string>
+    <string name="add_bank">Add bank</string>
+    <string name="calculate">Calculate</string>
+    <string name="error">Error</string>
+    <string name="invalid_data_error">Please, fill in all fields with decimal numbers or remove unused bank cards before start calculations.</string>
+</resources>
