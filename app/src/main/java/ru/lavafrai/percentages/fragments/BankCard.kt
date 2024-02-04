@@ -45,8 +45,8 @@ fun BankCard(bankData: BankData, onClose: () -> Unit, ) {
     ) {
         Column {
             BankCardControlsRow(bankData.name, onClose);
-            BankCardInputRow(stringResource(R.string.deposit), depositValid, bankData.deposit!!) {};
-            BankCardInputRow(stringResource(R.string.percents), percentsValid, bankData.percents!!) {};
+            BankCardInputRow(stringResource(R.string.layout_deposit), depositValid, bankData.deposit!!) {};
+            BankCardInputRow(stringResource(R.string.layout_percents), percentsValid, bankData.percents!!) {};
         }
     }
 }

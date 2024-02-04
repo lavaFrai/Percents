@@ -1,14 +1,18 @@
 <resources>
     <string name="app_name">Percentages</string>
-    <string name="deposit">Deposit</string>
-    <string name="percents">Percents</string>
+    <string name="layout_deposit">Deposit</string>
+    <string name="layout_percents">Percents</string>
     <string name="add_bank">Add bank</string>
-    <string name="calculate">Calculate</string>
+    <string name="button_calculate">Calculate</string>
     <string name="error">Error</string>
-    <string name="invalid_data_error">Please, fill in all fields with decimal numbers or remove unused bank cards before start calculations.</string>
+    <string name="invalid_data_error">Please, fill in all fields with decimal numbers and remove unused bank cards before start calculations.</string>
     <string name="kilo">k</string>
     <string name="mega">M</string>
     <string name="giga">G</string>
     <string name="tomuch">to much</string>
-    <string name="offer">Offer</string>
+    <string name="offer">Bank offer</string>
+    <string name="calculating">Calculating...</string>
+    <string name="out_profit">Profit:</string>
+    <string name="out_percent">Percent:</string>
+    <string name="out_full_deposit">Full deposit:</string>
 </resources>

@@ -84,7 +84,7 @@ fun ActivityMainView () {
                     onCalculate = {
                         val valid = banks.all { it.valid!!.value || it.removed!!.value }
 
-                        if (valid) Toast.makeText(context, "Calculating...", Toast.LENGTH_SHORT).show()
+                        if (valid) Toast.makeText(context, context.getString(R.string.calculating), Toast.LENGTH_SHORT).show()
                         else {
                             setInvalidDataDialogShowed(true);
                             return@BottomBar;
@@ -103,9 +103,9 @@ fun ActivityMainView () {
                         val percent : String = bankCalculator.percent.toFloat().formatTOSiString(context) + "%";
                         val fullDeposit : String = bankCalculator.fullDeposit.toFloat().formatTOSiString(context);
 
-                        Toast.makeText(context, "profit: ${profit}," +
-                                " percent: ${percent} and" +
-                                " Full deposit: ${fullDeposit}",
+                        Toast.makeText(context, "${context.getString(R.string.out_profit)} ${profit}, " +
+                                "${context.getString(R.string.out_percent)} ${percent} and " +
+                                "${context.getString(R.string.out_full_deposit)} ${fullDeposit}",
                             Toast.LENGTH_LONG).show();
                 })
             }
