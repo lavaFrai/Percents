@@ -16,14 +16,14 @@ import java.io.StringReader
 
 @Preview
 @Composable
-fun InvalidDataDialog(onConfirm: () -> Unit) {
+fun InvalidDataDialog(onConfirm: () -> Unit = {}) {
     AlertDialog(
         icon = { Icon(Icons.Default.Warning, null) },
         title = { Text(text = stringResource(R.string.error)) },
         text = { Text(text = stringResource(R.string.invalid_data_error)) },
         onDismissRequest = {},
         confirmButton = { TextButton(onClick = onConfirm) {
-            Text("Ok")
+            Text(text = stringResource(id = R.string.ok))
         } },
 
     )

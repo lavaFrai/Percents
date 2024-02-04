@@ -15,11 +15,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -33,9 +30,10 @@ import ru.lavafrai.percentages.model.BankData
 import ru.lavafrai.percentages.model.sampleBanks
 import ru.lavafrai.percentages.ui.theme.PercentagesTheme
 import androidx.compose.ui.platform.LocalContext
+import pro.maximon.percentages.BankCalculator
+import pro.maximon.percentages.utils.formatTOSiString
 import ru.lavafrai.percentages.fragments.InvalidDataDialog
 import ru.lavafrai.percentages.model.initialize
-import kotlin.random.Random
 
 
 class MainActivity : ComponentActivity() {
@@ -76,7 +74,7 @@ fun ActivityMainView () {
                 }
                 BottomBar(onAddBank = {
                         banks.add(BankData(
-                            "Aboba",
+                            context.getString(R.string.offer),
                             mutableStateOf(0f),
                             mutableStateOf(0f),
                             mutableStateOf(false),
@@ -84,11 +82,31 @@ fun ActivityMainView () {
                         ))
                 },
                     onCalculate = {
-                        val valid = banks.none { !it.removed!!.value && !it.valid!!.value }
+                        val valid = banks.all { it.valid!!.value || it.removed!!.value }
 
-                        if (valid) Toast.makeText(context, "Calculating...", Toast.LENGTH_SHORT).show()
-                        else setInvalidDataDialogShowed(true)
+                        if (valid) Toast.makeText(context, context.getString(R.string.calculating), Toast.LENGTH_SHORT).show()
+                        else {
+                            setInvalidDataDialogShowed(true);
+                            return@BottomBar;
+                        }
 
+                        val actualBanks = banks.filter { it.valid!!.value };
+                        val bankCalculator = BankCalculator();
+
+                        actualBanks.forEach {
+                            bankCalculator.calculateAnnualProfit(
+                                it.deposit!!.value.toDouble(),
+                                it.percents!!.value.toDouble()
+                            );
+                        }
+                        val profit : String = bankCalculator.fullProfit.toFloat().formatTOSiString(context);
+                        val percent : String = bankCalculator.percent.toFloat().formatTOSiString(context) + "%";
+                        val fullDeposit : String = bankCalculator.fullDeposit.toFloat().formatTOSiString(context);
+
+                        Toast.makeText(context, "${context.getString(R.string.out_profit)} ${profit}, " +
+                                "${context.getString(R.string.out_percent)} ${percent} and " +
+                                "${context.getString(R.string.out_full_deposit)} ${fullDeposit}",
+                            Toast.LENGTH_LONG).show();
                 })
             }
         }
