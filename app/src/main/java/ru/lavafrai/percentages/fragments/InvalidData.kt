@@ -16,7 +16,7 @@ import java.io.StringReader
 
 @Preview
 @Composable
-fun InvalidDataDialog(onConfirm: () -> Unit) {
+fun InvalidDataDialog(onConfirm: () -> Unit = {}) {
     AlertDialog(
         icon = { Icon(Icons.Default.Warning, null) },
         title = { Text(text = stringResource(R.string.error)) },
