@@ -23,7 +23,7 @@ fun InvalidDataDialog(onConfirm: () -> Unit) {
         text = { Text(text = stringResource(R.string.invalid_data_error)) },
         onDismissRequest = {},
         confirmButton = { TextButton(onClick = onConfirm) {
-            Text("Ok")
+            Text(text = stringResource(id = R.string.ok))
         } },
 
     )
