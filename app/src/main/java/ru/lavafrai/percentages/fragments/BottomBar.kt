@@ -42,17 +42,15 @@ fun BottomBar(onAddBank : () -> Unit = {}, onCalculate : () -> Unit = {}) {
             verticalArrangement = Arrangement.SpaceAround,
             modifier = Modifier.fillMaxSize()
         ) {
-            Row {
 
-                Button(
-                    onClick = onAddBank,
-                    modifier = Modifier
-                        .padding(8.dp, 0.dp)
-                        .fillMaxWidth()
-                ) {
-                    Icon(imageVector = Icons.Default.Add, contentDescription = null)
-                    Text(text = stringResource(id = R.string.add_bank))
-                }
+            Button(
+                onClick = onAddBank,
+                modifier = Modifier
+                    .padding(8.dp, 0.dp)
+                    .fillMaxWidth()
+            ) {
+                Icon(imageVector = Icons.Default.Add, contentDescription = null)
+                Text(text = stringResource(id = R.string.add_bank))
             }
 
             Button(

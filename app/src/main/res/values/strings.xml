@@ -6,4 +6,9 @@
     <string name="calculate">Calculate</string>
     <string name="error">Error</string>
     <string name="invalid_data_error">Please, fill in all fields with decimal numbers or remove unused bank cards before start calculations.</string>
+    <string name="kilo">k</string>
+    <string name="mega">M</string>
+    <string name="giga">G</string>
+    <string name="tomuch">to much</string>
+    <string name="offer">Offer</string>
 </resources>
