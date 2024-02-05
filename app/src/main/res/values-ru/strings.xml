@@ -23,7 +23,7 @@
     <string name="scale_kilo">тысяч</string>
     <string name="scale_mega">миллионов</string>
     <string name="scale_giga">миллиардов</string>
-    <string name="tomuch">Очень много</string>
+    <string name="to_much">Очень много</string>
 
     <string name="currency_unit">₽</string>
 
