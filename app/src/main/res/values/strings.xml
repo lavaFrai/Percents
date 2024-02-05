@@ -13,7 +13,7 @@
 
     *//info
     <string name="info">Info</string>
-    <string name="info_dialog">Please enter the amount of your deposit in the "Deposit" field and indicate the input units.\nEnter the percent of your contribution in the "Percent" field. <!--TODO--></string>
+    <string name="info_dialog">Please enter the amount of your deposit in the "Investment" field and indicate the input units.\nEnter the percent of your deposit in the "Percent" field. <!--TODO--></string>
 
     //decimal prefixes and units
     <string name="kilo">k</string>
