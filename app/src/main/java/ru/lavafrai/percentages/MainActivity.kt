@@ -66,7 +66,7 @@ fun ActivityMainView () {
     val scope = rememberCoroutineScope()
 
     val resultsState = rememberModalBottomSheetState()
-    val (resultsShowed, setResultsShowed) = remember { mutableStateOf(true) }
+    val (resultsShowed, setResultsShowed) = remember { mutableStateOf(false) }
     val resultDeposit = remember { mutableFloatStateOf(1000f) }
     val resultProfit = remember { mutableFloatStateOf(100f) }
     val resultPercents = remember { mutableFloatStateOf(10f) }

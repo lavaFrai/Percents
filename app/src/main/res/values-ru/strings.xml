@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Проценты</string>
-    <string name="layout_deposit">Депозит</string>
+    <string name="layout_deposit">Вложения</string>
     <string name="layout_percents">Процент</string>
     <string name="add_bank">Добавить банк</string>
     <string name="button_calculate">Рассчитать</string>
     <string name="error">Ошибка</string>
+    <string name="info">Информация</string>
     <string name="invalid_data_error">Пожалуйста, перед началом расчетов заполните все поля десятичными числами и удалите неиспользуемые банковские карты.</string>
     <string name="kilo">тыс.</string>
     <string name="mega">млн.</string>
@@ -17,4 +18,15 @@
     <string name="out_percent">Процент:</string>
     <string name="out_full_deposit">Весь депозит:</string>
     <string name="ok">Ок</string>
+
+    <string name="currency_unit">₽</string>
+
+    <string name="calculations_results">Результаты</string>
+    <string name="full_investment">Вложения</string>
+    <string name="annual_percents">Годовые проценты</string>
+    <string name="monthly_percents">Месячные проценты</string>
+    <string name="annual_profit">Годовая прибыль</string>
+    <string name="monthly_profit">Месячная прибыль</string>
+
+    <string name="full_revenue">Общий доход</string>
 </resources>
