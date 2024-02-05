@@ -1,4 +1,4 @@
-package ru.lavafrai.percentages.fragments
+package ru.lavafrai.percentages.fragments.dialogs
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Warning

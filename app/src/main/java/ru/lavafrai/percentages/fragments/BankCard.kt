@@ -35,7 +35,7 @@ import ru.lavafrai.percentages.utils.isValidFloat
 
 
 @Composable
-fun BankCard(bankData: BankData, onClose: () -> Unit, ) {
+fun BankCard(bankData: BankData, onInfo: () -> Unit = {}, onClose: () -> Unit = {}, ) {
     val depositValid = remember { mutableStateOf(false) }
     val percentsValid = remember { mutableStateOf(false) }
     bankData.valid!!.value = depositValid.value && percentsValid.value && !bankData.removed!!.value
@@ -44,7 +44,7 @@ fun BankCard(bankData: BankData, onClose: () -> Unit, ) {
         modifier = Modifier.fillMaxWidth()
     ) {
         Column {
-            BankCardControlsRow(bankData.name, onClose);
+            BankCardControlsRow(bankData.name, onInfo, onClose);
             BankCardInputRow(stringResource(R.string.layout_deposit), depositValid, bankData.deposit!!) {};
             BankCardInputRow(stringResource(R.string.layout_percents), percentsValid, bankData.percents!!) {};
         }
@@ -53,13 +53,13 @@ fun BankCard(bankData: BankData, onClose: () -> Unit, ) {
 
 
 @Composable
-fun BankCardControlsRow(bankName: String, onClose: () -> Unit) {
+fun BankCardControlsRow(bankName: String, onInfo: () -> Unit, onClose: () -> Unit) {
     Row (
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
     ) { // Controls row
-        IconButton(onClick = {}) {
+        IconButton(onClick = onInfo) {
             Icon(
                 imageVector = Icons.Default.Info,
                 contentDescription = null,
@@ -110,5 +110,5 @@ fun BankCardInputRow(name: String, isValid: MutableState<Boolean>, textOutput: M
 @Preview
 @Composable
 fun BankCardPreview() {
-    BankCard(bankData = sampleBanks[0]) {}
+    BankCard(bankData = sampleBanks[0])
 }

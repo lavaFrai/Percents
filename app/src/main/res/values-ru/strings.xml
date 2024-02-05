@@ -12,7 +12,7 @@
     <string name="giga">млрд.</string>
     <string name="tomuch">Очень много</string>
     <string name="offer">Предложение банка</string>
-    <string name="calculating">Рассчитываем...</string>
+    <string name="calculating">Рассчитываем…</string>
     <string name="out_profit">Доход:</string>
     <string name="out_percent">Процент:</string>
     <string name="out_full_deposit">Весь депозит:</string>
