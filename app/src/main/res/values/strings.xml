@@ -13,12 +13,12 @@
 
     *//info
     <string name="info">Info</string>
-    <string name="info_dialog">Please enter the amount of your deposit in the "Investment" field and indicate the input units.\nEnter the percent of your deposit in the "Percent" field. <!--TODO--></string>
+    <string name="info_dialog">Please enter the amount of your deposit in the "Investment" field and indicate the input units.\nEnter the percent of your deposit in the "Percent" field.</string>
 
     //decimal prefixes and units
-    <string name="kilo">k</string>
-    <string name="mega">M</string>
-    <string name="giga">G</string>
+    <string name="kilo">thsnd.</string>
+    <string name="mega">mill.</string>
+    <string name="giga">bill.</string>
     <string name="scale_kilo">thousands</string>
     <string name="scale_mega">millions</string>
     <string name="scale_giga">billions</string>
