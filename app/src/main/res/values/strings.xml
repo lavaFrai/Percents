@@ -2,7 +2,7 @@
     <string name="app_name">Percentages</string>
     <string name="layout_deposit">Investment</string>
     <string name="layout_percents">Percent</string>
-    <string name="offer">Deposit offer</string>
+    <string name="offer">Bank offer</string>
 
     <!--dialogs-->
     <string name="ok">OK</string>

@@ -3,7 +3,7 @@
     <string name="app_name">Проценты</string>
     <string name="layout_deposit">Вложения</string>
     <string name="layout_percents">Процент</string>
-    <string name="offer">Предложение вклада</string>
+    <string name="offer">Предложение банка</string>
 
     <!--dialogs-->
     <string name="ok">Ок</string>
