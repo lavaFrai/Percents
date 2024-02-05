@@ -19,6 +19,10 @@
     <string name="out_full_deposit">Full deposit:</string>
     <string name="ok">OK</string>
 
+    <string name="scale_kilo">thousands</string>
+    <string name="scale_mega">millions</string>
+    <string name="scale_giga">billions</string>
+
     <string name="currency_unit">$</string>
     <string name="percents_unit" translatable="false">%</string>
 

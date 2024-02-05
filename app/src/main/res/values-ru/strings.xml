@@ -3,7 +3,7 @@
     <string name="app_name">Проценты</string>
     <string name="layout_deposit">Вложения</string>
     <string name="layout_percents">Процент</string>
-    <string name="add_bank">Добавить банк</string>
+    <string name="add_bank">Добавить вклад</string>
     <string name="button_calculate">Рассчитать</string>
     <string name="error">Ошибка</string>
     <string name="info">Информация</string>
@@ -18,6 +18,10 @@
     <string name="out_percent">Процент:</string>
     <string name="out_full_deposit">Весь депозит:</string>
     <string name="ok">Ок</string>
+
+    <string name="scale_kilo">тысяч</string>
+    <string name="scale_mega">миллионов</string>
+    <string name="scale_giga">миллиардов</string>
 
     <string name="currency_unit">₽</string>
 

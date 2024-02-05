@@ -1,7 +1,6 @@
 package ru.lavafrai.percentages
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -22,27 +21,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 import ru.lavafrai.percentages.fragments.BankCard
 import ru.lavafrai.percentages.fragments.BottomBar
-import ru.lavafrai.percentages.model.BankData
-import ru.lavafrai.percentages.model.sampleBanks
-import ru.lavafrai.percentages.ui.theme.PercentagesTheme
-import androidx.compose.ui.platform.LocalContext
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import pro.maximon.percentages.BankCalculator
 import ru.lavafrai.percentages.fragments.dialogs.InfoDialog
 import ru.lavafrai.percentages.fragments.dialogs.InvalidDataDialog
 import ru.lavafrai.percentages.fragments.dialogs.ResultsDialog
+import ru.lavafrai.percentages.model.BankData
 import ru.lavafrai.percentages.model.initialize
+import ru.lavafrai.percentages.model.sampleBanks
+import ru.lavafrai.percentages.ui.theme.PercentagesTheme
+import ru.lavafrai.percentages.utils.bankDataSaver
 import ru.lavafrai.percentages.utils.banksProcessor
-import kotlin.concurrent.thread
 
 
 class MainActivity : ComponentActivity() {
@@ -60,16 +57,16 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun ActivityMainView () {
-    val banks: MutableList<BankData> = remember { mutableStateListOf<BankData>().apply { addAll(sampleBanks) }}
-    val (invalidDataDialogShowed, setInvalidDataDialogShowed) = remember { mutableStateOf(false) }
+    val banks: MutableList<BankData> = rememberSaveable(saver = bankDataSaver()) { mutableStateListOf<BankData>().apply { addAll(sampleBanks) }}
+    val (invalidDataDialogShowed, setInvalidDataDialogShowed) = rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
     val resultsState = rememberModalBottomSheetState()
-    val (resultsShowed, setResultsShowed) = remember { mutableStateOf(false) }
-    val resultDeposit = remember { mutableFloatStateOf(1000f) }
-    val resultProfit = remember { mutableFloatStateOf(100f) }
-    val resultPercents = remember { mutableFloatStateOf(10f) }
+    val (resultsShowed, setResultsShowed) = rememberSaveable { mutableStateOf(false) }
+    val resultDeposit = rememberSaveable { mutableFloatStateOf(1000f) }
+    val resultProfit = rememberSaveable { mutableFloatStateOf(100f) }
+    val resultPercents = rememberSaveable { mutableFloatStateOf(10f) }
 
     for (bank in banks) { bank.initialize() }
 
@@ -150,7 +147,7 @@ fun ActivityMainView () {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BanksList(banks : MutableList<BankData>) {
-    val (infoDialogShowed, setInfoDialogShowed) = remember { mutableStateOf(false) }
+    val (infoDialogShowed, setInfoDialogShowed) = rememberSaveable { mutableStateOf(false) }
     when { infoDialogShowed -> InfoDialog { setInfoDialogShowed(false) } }
 
     val context = LocalContext.current

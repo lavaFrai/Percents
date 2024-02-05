@@ -69,4 +69,5 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
 
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 }
