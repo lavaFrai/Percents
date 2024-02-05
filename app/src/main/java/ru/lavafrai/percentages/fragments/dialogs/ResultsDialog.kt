@@ -23,7 +23,6 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import pro.maximon.percentages.utils.formatToSIString
 import ru.lavafrai.percentages.R
