@@ -24,7 +24,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import pro.maximon.percentages.utils.formatToSIString
+import pro.maximon.percentages.utils.nonScaledSp
 import ru.lavafrai.percentages.R
 
 
@@ -82,9 +84,9 @@ fun ResultsDialogLine(name: String, value: String, unit: String = "") {
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxWidth()
-            .height(20.dp)
+            .height(24.dp)
     ) {
-        Text(text = name)
+        Text(text = name, fontSize = 20.nonScaledSp)
         Box(
             modifier = Modifier
                 .weight(1f)
@@ -103,9 +105,9 @@ fun ResultsDialogLine(name: String, value: String, unit: String = "") {
             )
         }
         Row {
-            Text(text = value)
+            Text(text = value, fontSize = 20.nonScaledSp)
             Spacer(modifier = Modifier.width(2.dp))
-            Text(text = unit)
+            Text(text = unit, fontSize = 20.nonScaledSp)
         }
     }
 }
