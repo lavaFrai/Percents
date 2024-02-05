@@ -65,7 +65,7 @@ fun ResultsDialog(
             ResultsDialogLine(name = stringResource(id = R.string.annual_profit), value = resultProfit.formatToSIString(), unit = stringResource(id = R.string.currency_unit))
             Spacer(modifier = Modifier.height(8.dp))
             Divider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
-            ResultsDialogLine(name = stringResource(id = R.string.full_revenue), value = (resultDeposit + resultProfit).toString(), unit = stringResource(id = R.string.currency_unit))
+            ResultsDialogLine(name = stringResource(id = R.string.full_revenue), value = (resultDeposit + resultProfit).formatToSIString(), unit = stringResource(id = R.string.currency_unit))
 
             Button(onClick = onClose, modifier = Modifier
                 .fillMaxWidth()
