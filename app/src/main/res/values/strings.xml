@@ -4,18 +4,18 @@
     <string name="layout_percents">Percent</string>
     <string name="offer">Deposit offer</string>
 
-    //dialogs
+    <!--dialogs-->
     <string name="ok">OK</string>
 
-    *//error
+        <!--error-->
     <string name="error">Error</string>
     <string name="invalid_data_error">Please, fill in all fields with decimal numbers and remove unused bank cards before start calculations.</string>
 
-    *//info
+        <!--info-->
     <string name="info">Info</string>
     <string name="info_dialog">Please enter the amount of your deposit in the "Investment" field and indicate the input units.\nEnter the percent of your deposit in the "Percent" field.</string>
 
-    //decimal prefixes and units
+    <!--decimal prefixes and units-->
     <string name="kilo">thsnd.</string>
     <string name="mega">mill.</string>
     <string name="giga">bill.</string>
@@ -27,7 +27,7 @@
     <string name="currency_unit">$</string>
     <string name="percents_unit" translatable="false">%</string>
 
-    //calculating results
+    <!--calculating results-->
     <string name="calculations_results">Calculations results</string>
     <string name="full_investment">Investment</string>
     <string name="annual_percents">Annual percents</string>
@@ -37,12 +37,12 @@
 
     <string name="full_revenue">Revenue</string>
 
-    //buttons
+    <!--buttons-->
     <string name="add_bank">Add bank</string>
     <string name="button_calculate">Calculate</string>
     <string name="close">Close</string>
 
-    //not used
+    <!--not used-->
     <string name="calculating">Calculating…</string>
     <string name="out_profit">Profit:</string>
     <string name="out_percent">Percent:</string>
