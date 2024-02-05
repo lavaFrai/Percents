@@ -51,7 +51,9 @@ fun ResultsDialog(
         ) {
             Text(
                 text = stringResource(id = R.string.calculations_results),
-                modifier = Modifier.padding(bottom = 16.dp).align(Alignment.CenterHorizontally),
+                modifier = Modifier
+                    .padding(bottom = 16.dp)
+                    .align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.headlineSmall
             )
             
@@ -68,7 +70,7 @@ fun ResultsDialog(
             Button(onClick = onClose, modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 32.dp)) {
-                Text(text = "Close")
+                Text(text = stringResource(id = R.string.close))
             }
         }
     }
