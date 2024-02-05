@@ -23,7 +23,6 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import pro.maximon.percentages.utils.formatToSIString
 import ru.lavafrai.percentages.R
@@ -51,7 +50,9 @@ fun ResultsDialog(
         ) {
             Text(
                 text = stringResource(id = R.string.calculations_results),
-                modifier = Modifier.padding(bottom = 16.dp).align(Alignment.CenterHorizontally),
+                modifier = Modifier
+                    .padding(bottom = 16.dp)
+                    .align(Alignment.CenterHorizontally),
                 style = MaterialTheme.typography.headlineSmall
             )
             
@@ -63,12 +64,12 @@ fun ResultsDialog(
             ResultsDialogLine(name = stringResource(id = R.string.annual_profit), value = resultProfit.formatToSIString(), unit = stringResource(id = R.string.currency_unit))
             Spacer(modifier = Modifier.height(8.dp))
             Divider(color = MaterialTheme.colorScheme.onPrimaryContainer, thickness = 1.dp)
-            ResultsDialogLine(name = stringResource(id = R.string.full_revenue), value = (resultDeposit + resultProfit).toString(), unit = stringResource(id = R.string.currency_unit))
+            ResultsDialogLine(name = stringResource(id = R.string.full_revenue), value = (resultDeposit + resultProfit).formatToSIString(), unit = stringResource(id = R.string.currency_unit))
 
             Button(onClick = onClose, modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 32.dp)) {
-                Text(text = "Close")
+                Text(text = stringResource(id = R.string.close))
             }
         }
     }
